@@ -1,0 +1,40 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-sans: "Cairo", system-ui, -apple-system, sans-serif;
+    --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+  }
+
+  html {
+    font-family: var(--font-sans);
+    direction: rtl;
+  }
+
+  .font-mono,
+  .tabular-nums {
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+@media print {
+  @page {
+    size: A4;
+    margin: 12mm;
+  }
+  body {
+    background: #ffffff !important;
+    color: #0f172a !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  .no-print {
+    display: none !important;
+  }
+  .print-only {
+    display: block !important;
+  }
+  .print-break-inside-avoid {
+    break-inside: avoid;
+  }
+}
